@@ -18,7 +18,6 @@ class DescuentoFronteraTest {
 
     @Test
     void sinDescuentoJustoAntesDeLaFrontera() {
-        // preparar / ejecutar / comparar
         int obtenido = descuento.porcentaje(99);
         assertEquals(0, obtenido);
     }
@@ -33,5 +32,10 @@ class DescuentoFronteraTest {
     void diezPorCientoDespuesDeLaFrontera() {
         int obtenido = descuento.porcentaje(101);
         assertEquals(10, obtenido);
+    }
+
+    @Test
+    void totalCentavosAplicaDescuentoEnFrontera() {
+        assertEquals(450000, descuento.totalCentavos(5000, 100));
     }
 }
